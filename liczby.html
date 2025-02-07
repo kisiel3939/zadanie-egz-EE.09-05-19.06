@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ciąge liczbowe</title>
+		<link rel="stylesheet" href="styl2.css" />
+	</head>
+	<body>
+		<header id="pierwszy">
+			<h2>Poznaj Ciągi Liczbowe</h2>
+		</header>
+		<header id="drugi">
+			<a href="liczby.html">Ciągi arytmetyczne</a>
+		</header>
+		<header id="trzeci">
+			<a href="fib.html">Ciąg Fibonacciego</a>
+		</header>
+		<header id="czwarty">
+			<img src="obraz1.png" alt="Fibonacci" />
+		</header>
+		<main>
+			<ol type="1">
+				<li>ciągi arytmetyczne</li>
+				<li>ciągi geometryczne</li>
+				<li>ciąg Fibonacciego</li>
+			</ol>
+		</main>
+		<article>
+			<h2>Generowanie ciągu arytmetycznego</h2>
+			<form method="post">
+				Pierwszy wyraz A1: <input type="number" id="PieA1" /><br />
+				Różnica ciągu R: <input type="number" id="rozR" /><br />
+				Liczba wyrazów w ciągu N: <input type="number" id="licN" /><br />
+				<input
+					type="button"
+					id="przycisk"
+					value="Generuj Ciąg"
+					onclick="genCiag()"
+				/><br /><br />
+			</form>
+			<p id="wynik"></p>
+		</article>
+		<script>
+			function genCiag() {
+				var a1 = parseFloat(document.getElementById("PieA1").value);
+				var r = parseFloat(document.getElementById("rozR").value);
+				var n = parseInt(document.getElementById("licN").value);
+				var wynik = [];
+				for (var i = 0; i < n; i++) {
+					wynik.push(a1 + i * r);
+				}
+				document.getElementById("wynik").innerHTML =
+					"Ciąg  arytmetyczny zawiera wyrazy: " + wynik.join(", ");
+			}
+		</script>
+		<footer>
+			<p>Autor: 00000000000</p>
+		</footer>
+	</body>
+</html>
